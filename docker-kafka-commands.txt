@@ -1,9 +1,11 @@
 Create
 docker run   --net=host   --rm   confluentinc/cp-kafka:latest   kafka-topics --create --topic invoice --partitions 5 --replication-factor 3 --if-not-exists --zookeeper  localhost:22181
 Describe
-docker run   --net=host   --rm   confluentinc/cp-kafka:latest   kafka-topics --zookeeper localhost:22181 --topic customer --describe
+docker run   --net=host   --rm   confluentinc/cp-kafka:latest   kafka-topics --zookeeper localhost:22181 --topic invoice --describe
 List
 docker run   --net=host   --rm   confluentinc/cp-kafka:latest   kafka-topics --list --zookeeper  localhost:22181
 Delete
 docker run   --net=host   --rm   confluentinc/cp-kafka:latest   kafka-topics  --delete --topic customer --zookeeper localhost:22181
 
+
+docker run   --net=host   --rm   confluentinc/cp-kafka:latest   --bootstrap-server localhost:9092 --topic invoice --from-beginning
